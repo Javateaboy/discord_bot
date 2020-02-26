@@ -18,7 +18,7 @@ async def on_message(message):
     if message.author.bot:
         return
     # /nekoでにゃーんと帰る
-    if message.content.startwith("南雲"):
+    if message.content.startwith("a"):
         await message.channel.send('にゃーん')
 
 client.run(TOKEN)
