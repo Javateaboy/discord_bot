@@ -1,5 +1,7 @@
 import discord
 import os
+import asyncio
+import re
 
 TOKEN = os.environ['DISCORD_BOT_TOKEN']
 
@@ -17,8 +19,8 @@ async def on_message(message):
     # BOT時は無視
     if message.author.bot:
         return
-    # /nekoでにゃーんと帰る
-    if message.content == '/fuck':
+    # 先頭がmesschから始まる・・・
+    if re.match('messch', message.content):
         await message.channel.send('にゃーん')
 
 client.run(TOKEN)
